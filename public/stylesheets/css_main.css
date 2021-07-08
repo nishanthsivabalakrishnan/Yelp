@@ -1,0 +1,6 @@
+.thumbnail img{
+    width: 100%;
+}
+.caption-full p{
+    text-align: justify; padding: 9px
+}

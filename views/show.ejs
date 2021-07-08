@@ -1,0 +1,59 @@
+<%- include ('partials/header') %>
+
+<div class="container">
+        <div class="col-md-3">
+            <div class="lead">
+                <p>Yelpcamp</p>
+                <div class="list-group">
+                    <li class="list-group-item active">Info</li>
+                    <li class="list-group-item">Contact</li>
+                    <li class="list-group-item">Discription</li>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="col-md-9">
+            
+                <div class="thumbnail">
+                    <img class="img-responsive" src="<%= camp.url %> " alt="">
+
+                    <div class="caption-full">
+                        <h3 class="pull-right" style="margin-top: 4px;">9.0/per night</h3>
+                        <h2><a href=""><%= camp.name %></a></h2>
+                        <p><%= camp.disc %></p>
+                    </div>                    
+
+                </div>
+
+                <div class="well">
+                    <div class="text-right">
+                        <a class="btn btn-success" href="/campground/<%=camp._id%>/comments/new" style="color: rgb(245, 245, 245);">Add a comment</a>
+                    </div>                    
+
+                    <%  camp.comments.forEach(function(comments){ %>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <strong><%= comments.author %></strong>
+                                <span class="pull-right"><p>10 daya ago</p></span>
+                                <p style="margin-top: 2px;"><%= comments.comment_text %></p>
+                            </div>
+                            
+                        </div>                       
+                        
+                    <% })   %>
+
+                </div> 
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+<%- include('partials/footer.ejs') %> 
